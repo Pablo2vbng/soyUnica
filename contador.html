@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador con Latido Corregido</title>
+    <title>Contador con Latido Ajustado</title>
     <style>
         body, html {
             height: 100%;
@@ -41,7 +41,7 @@
             font-weight: bold;
             margin: 0;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 1);
-            transition: font-size 0.5s ease-out; /* Transición suave para el crecimiento */
+            transition: font-size 0.5s ease-out;
             animation: heartbeat 1.5s ease-in-out infinite;
         }
 
@@ -65,7 +65,7 @@
 
         #startButton.hidden {
             opacity: 0;
-            pointer-events: none; /* Evita que se pueda hacer clic en el botón oculto */
+            pointer-events: none;
         }
         
         @keyframes heartbeat {
@@ -94,11 +94,12 @@
         const startButton = document.getElementById('startButton');
 
         const valorFinal = 200000;
-        const duracionTotal = 35 * 60 * 1000; // 35 minutos en milisegundos
+        const duracionTotal = 35 * 60 * 1000; // 35 minutos
 
         const tamañoFuenteInicial = 8; // en vw
-        /* CORRECCIÓN: Se ha reducido el tamaño final para que el crecimiento sea más progresivo */
-        const tamañoFuenteFinal = 30; // en vw 
+        
+        /* CORRECCIÓN: Se ha reducido el tamaño final a la mitad */
+        const tamañoFuenteFinal = 15; // en vw 
 
         let startTime;
 
@@ -133,4 +134,4 @@
     </script>
 
 </body>
-</html>
+</html>```
