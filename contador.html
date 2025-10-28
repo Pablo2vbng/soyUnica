@@ -31,7 +31,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.45); /* Capa oscura para mejorar legibilidad */
             display: flex;
-            justify-content: center;
+            justify-content: bottom;
             align-items: center;
             flex-direction: column;
         }
@@ -43,29 +43,50 @@
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 1);
             transition: font-size 0.5s ease-out;
             animation: heartbeat 1.5s ease-in-out infinite;
+            padding-top: 15%;
         }
-
+        
+         
         #startButton {
-            padding: 18px 35px;
-            font-size: 1.8em;
-            cursor: pointer;
+             
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;  
+            
+             
+            background-color: #0d6efd; 
             border: none;
-            border-radius: 12px;
-            background-color: #28a745;
-            color: white;
-            margin-top: 30px;
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+             
+            margin-top: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             opacity: 1;
         }
 
         #startButton:hover {
-            background-color: #218838;
-            transform: scale(1.05);
+            background-color: #0b5ed7; /* Azul un poco más oscuro */
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
 
         #startButton.hidden {
             opacity: 0;
             pointer-events: none;
+            transform: scale(0.5);
+        }
+
+        /* Estilo para el icono SVG dentro del botón */
+        #startButton svg {
+            width: 50%;
+            height: 50%;
+            color: white;
         }
         
         @keyframes heartbeat {
@@ -86,7 +107,14 @@
 
     <div class="overlay">
         <h1 id="contador">0</h1>
-        <button id="startButton">Empezar a contar</button>
+    
+        <button id="startButton" aria-label="Empezar a contar">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                <line x1="12" y1="2" x2="12" y2="12"></line>
+            </svg>
+        </button>
     </div>
 
     <script>
@@ -98,7 +126,6 @@
 
         const tamañoFuenteInicial = 8; // en vw
         
-        /* CORRECCIÓN: Se ha reducido el tamaño final a la mitad */
         const tamañoFuenteFinal = 15; // en vw 
 
         let startTime;
@@ -134,4 +161,4 @@
     </script>
 
 </body>
-</html>```
+</html>
